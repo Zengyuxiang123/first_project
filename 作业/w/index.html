@@ -3,49 +3,82 @@
 <head>
     <meta charset="UTF-8">
     <title>插入多张图片示例</title>
-    <style>
-        /* 统一设置所有图片的样式，避免变形且排版更美观 */
+    <style> 
+        .image-item {max-width: 200px; /* 每张图片最大宽度 */
+        
+            text-align: center;     /* 标题文字居中 */
+            background-color: #f0f0f0; /* 浅灰色背景 */
+            padding: 10px;          /* 内边距10px */
+            border-radius: 8px;     /* 整体圆角，和图片呼应 */
+        }
+
+
+       
+        
         .image-container {
             display: flex; /* 横向排列图片 */
             gap: 20px; /* 图片之间的间距 */
             flex-wrap: wrap; /* 屏幕变小时自动换行 */
             padding: 20px;
+            border-radius: 8px; 
         }
-        .image-item {
-            max-width: 300px; /* 每张图片最大宽度 */
-        }
-        .image-item img {
-            width: 100%; /* 自适应容器宽度 */
-            height: auto; /* 保持宽高比，避免变形 */
-            border-radius: 8px; /* 可选：圆角效果 */
-            box-shadow: 0 2px 5px #eee; /* 可选：轻微阴影 */
-        }
-        .image-item p {
-            text-align: center;
-            margin-top: 10px;
-            font-size: 14px;
-            color: #333;
-        }/* 统一排版，让图片整齐美观，避免杂乱 */
+        
+        
+        
         .image-gallery {
             display: flex;      /* 横向排列图片 */
             flex-wrap: wrap;    /* 屏幕变小时自动换行 */
             gap: 20px;          /* 图片之间留间距 */
-            padding: 20px;      /* 整体内边距 */
+            padding: 10px;      /* 整体内边距 */
         }
-        .single-image {
-            max-width: 300px;   /* 每张图片最大宽度 */
-        }
+        
+
+
         .single-image img {
-            width: 100%;        /* 自适应容器宽度 */
+            width: 200px ;        /* 自适应容器宽度 */
             height: auto;       /* 保持宽高比，不拉伸变形 */
             border-radius: 8px; /* 可选：圆角效果，更美观 */
         }
+
+
+
         .single-image p {
             text-align: center; /* 文字居中 */
             margin-top: 10px;
             font-size: 14px;
-            color: #333;
+            color: #3b3838;
         }
+        
+        
+        .image-item, .single-image {
+            text-align: center;     /* 标题文字居中 */
+            background-color: #f0f0f0; /* 浅灰色背景 */
+            padding: 10px;          /* 内边距10px */
+            border-radius: 8px;     /* 整体圆角 */
+            max-width: 200px;       /* 图片项最大宽度 */
+            overflow: hidden;       /* 防止放大超出背景区域 */
+        }
+        
+
+
+        /* 统一图片样式 + 悬浮放大过渡 */
+        .image-item img, .single-image img {
+            width: 200px;           /* 图片宽度200px */
+            height: auto;           /* 保持宽高比 */
+            border-radius: 8px;     /* 图片圆角 */
+            display: block;         /* 消除底部空白 */
+            transition: transform 0.3s ease; /* 平滑过渡动画 */
+        }
+
+
+
+        /* 鼠标悬浮放大1.2倍（核心效果） */
+        .image-item:hover img, .single-image:hover img {
+            transform: scale(1.2);  /* 宽高放大1.2倍 */
+        }
+
+
+
     </style>
 </head>
 <body >
@@ -60,7 +93,6 @@
 </ul>
     <h1>我的图片展示</h1>
     
-
     
     
     <div class="image-container">
@@ -105,7 +137,6 @@
 
 
 
-
     <h1>我的图片展示</h1>
     
     <div class="image-gallery">
@@ -132,4 +163,3 @@
 <p>愿以真心换真心，不敷衍，不辜负，好好相处。
 相识不易，我会带着尊重与真诚，慢慢走近你。</p>
 </body>
-</html>
